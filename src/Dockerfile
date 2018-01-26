@@ -10,7 +10,7 @@ RUN apk add --no-cache git zip \
 	&& luarocks pack middleman $MIDDLEMAN_VERSION \
 	&& luarocks install middleman-$MIDDLEMAN_VERSION.all.rock \
 	&& cd - \
-	&& rm middleman-src \
+	&& rm -r middleman-src \
 	&& apk del git zip
 	
 ENV KONG_CUSTOM_PLUGINS middleman
